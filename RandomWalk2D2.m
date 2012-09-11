@@ -21,7 +21,7 @@ hold on; % Allows multiple plots
 steps = 100000;
 
 %Number of trials
-trials=3; 
+trials=6; 
 
 %% Code - don’t edit below here for trials
 
