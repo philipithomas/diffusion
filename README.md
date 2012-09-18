@@ -1,14 +1,17 @@
 # Diffusion Experiments
-These files were
+These files were created in Matlab for the Biophysics Laboratory course at Washington University in St. Louis during the Fall 2012 semester.
 
 ## Authors
 
 Philip Thomas, http://philipithomas.com
+
 Mohammed Hashim
 
 ## Course Information
 Source: http://physics.wustl.edu/classinfo/360/Docs/intro.php
+
 Physics 360
+
 Department of Physics, Washington University in St. Louis
 
 ## Diffusion Laboratory Description
