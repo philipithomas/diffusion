@@ -9,14 +9,14 @@ clc
 %% Set bounds
 
 % creation distance from origin
-radiusCreation= 100;
+radiusCreation= 250;
 
 % fraction greater than creation radius for kill zone
 frac=.5;
 
 
 % Also set the number of particles we want to enter. 
-numparticles = 50000;
+numparticles = 100000;
 
 %% Map Creation
 radiusKill=radiusCreation*(frac+1);
@@ -55,7 +55,7 @@ walk=0; % Double - be a random number
 
 while (( particle < numparticles) + (escape~=0))~=0 
 	particle=particle+1; %increase the particle count.
-    disp('new particle');
+    %disp('new particle');
 	% Print some progress markers
 
 	% note that we initialize before running the rest because the starting
@@ -97,16 +97,16 @@ while ((stuck+die+escape) == 0)
 
 % Random walk -> Move it
 walk=rand;
-disp('.');
-if rand<.25 
+%disp('.');
+if walk<.25 
 	%up
-	y=y-1;
-elseif rand<.5
+	y=y+1;
+elseif walk<.5
 	% right
 	x=x+1;
-elseif rand<.75
+elseif walk<.75
 	%down
-	y=y+1;
+	y=y-1;
 else
 	% left
 	x=x-1;
@@ -122,7 +122,7 @@ if (hypot(x,y)>=radiusKill)
 	% The particle is out of bounds. 
 	% KILL IT!!!!
 die=1;
-disp('splat');
+%disp('splat');
 else
 	% If we don't kill it, we check for whether to stick it 
 % Check adjacent squares
@@ -131,8 +131,7 @@ stuck=0;
 			% Then there is an adjacent particle, so we
 			% need to stick it
 			stuck=1;
-            disp('stuck')
-            pause
+            %disp('stuck')
 		end % end adjacent check
 		
 		% If there isn't an adjacent particle ->
@@ -150,12 +149,16 @@ end %end the stuck criteria
 if stuck 
     
     map(add+x,add+y)=1; % By setting it to “1”, we now have a stuck particle there!
+    stuck=0;
+    clf
+    imshow(imresize(map,.66));
+    pause(.001);
     
 % Now we see if we need to abort the program because the particles are 
 % sticking too close to the edge. 
 
 % If the particle sticks within 2 units of the edge of the board, we end the simulation
-% so that particles don't start overlap3.14159265359ng and stuff. 
+% so that particles don't start overlapping and stuff. 
 % note that, at this point, the variables x and y represent a stuck particle already
 if ((hypot(x,y)*1.2)>=radiusCreation)
 	escape = 1;
@@ -175,4 +178,3 @@ if (escape==1)
 
 end
 
-imshow(map)

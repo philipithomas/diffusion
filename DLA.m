@@ -17,8 +17,8 @@ clc
 %Change these!
 
 %Bounds of the box - a grid, essentially
-xmax = 500;
-ymax = 500;
+xmax = 100;
+ymax = 100;
 
 % Also set the number of particles we want to enter. 
 numparticles = 1000000;
@@ -115,15 +115,15 @@ while (stuck == 0)&&(die == 0)
 
 % Random walk -> Move it
 walk=rand;
-if rand<.25 
+if walk<.25 
 	%up
 	y=y-1;
-elseif rand<.5
+elseif walk<.5
 	% right
 	x=x+1;
-elseif rand<.75
+elseif walk<.75
 	%down
-	y=y-1;
+	y=y+1;
 else
 	% left
 	x=x-1;
@@ -189,9 +189,9 @@ if (escape==1)
 
 end
 
-
+imshow(map)
 %% Plot
-bar3(map, 'b')
+%bar3(map, 'b')
 % We’ll save this for later, but it should be a simple x,y plot - if the value is zero on the map at x,y, then there is no particle ->keep it blank
 % During testing, we can do small matrices and just show them by typing in ‘map’;
 

@@ -1,4 +1,4 @@
-%Diffusion Limited Aggregation Ver. 2
+%Diffusion Limited Aggregation Ver. 3
 %This time we will fix the problem of bias by using a circular map instead of a square. New %particles will be introduced at a certain radius away from the seed particle at the origin and will %random walk until it gets stuck adjacent an already stuck particle. There will be a larger circle %that represents the limit of the map where wandering particles will be killed if they travel too far 
 %away.
 %%  initialize
@@ -16,7 +16,10 @@ frac=.5;
 
 
 % Also set the number of particles we want to enter. 
-numparticles = 10000;
+numparticles = 100000;
+
+% Set probability of sticking
+stickProbability = .01;
 
 %% Map Creation
 radiusKill=radiusCreation*(frac+1);
@@ -100,16 +103,27 @@ walk=rand;
 %disp('.');
 if walk<.25 
 	%up
+	if map(add+x,add+y+1)==0 
 	y=y+1;
+	end
 elseif walk<.5
 	% right
+if map(add+x+1,add+y)==0 
 	x=x+1;
+	end
+	
 elseif walk<.75
 	%down
+if map(add+x,add+y-1)==0 
 	y=y-1;
+	end
+
 else
 	% left
+if map(add+x-1,add+y)==0 
 	x=x-1;
+	end
+
 end
 		% The particle is now walked. 
 
@@ -130,7 +144,9 @@ stuck=0;
 		if (map(add+x+1,add+y) + map(add+x-1,add+y) + map(add+x,add+y-1) + map(add+x,add+y+1))~=0 
 			% Then there is an adjacent particle, so we
 			% need to stick it
-			stuck=1;
+			if (rand<stickProbability) 
+				stuck=1;
+			end
             %disp('stuck')
 		end % end adjacent check
 		
@@ -150,9 +166,9 @@ if stuck
     
     map(add+x,add+y)=1; % By setting it to “1”, we now have a stuck particle there!
     stuck=0;
-    %clf
-    %imshow(imresize(map,.66));
-   % pause(.001);
+    clf
+    imshow(imresize(map,1));
+    pause(.001);
     
 % Now we see if we need to abort the program because the particles are 
 % sticking too close to the edge. 
@@ -199,3 +215,4 @@ end
 r
 
 d=log(n)/log(r)
+
