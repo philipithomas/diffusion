@@ -1,5 +1,6 @@
 %This is a test of a 2D random walk
 
+
 % It is based on a Wikipedia description of a 2D random walk, which
 % describes a 'drunk' in a city who approaches 4-way intersections, and
 % must select which direction to go. Each choice is independent, and of

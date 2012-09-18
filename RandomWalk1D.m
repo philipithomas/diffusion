@@ -1,4 +1,5 @@
 %This is a test of a 1D random walk
+
 %% initialize
 clear
 clf
