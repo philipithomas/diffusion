@@ -1,6 +1,23 @@
-%Diffusion Limited Aggregation 3D
-%This time we will fix the problem of bias by using a circular map instead of a square. New %particles will be introduced at a certain radius away from the seed particle at the origin and will %random walk until it gets stuck adjacent an already stuck particle. There will be a larger circle %that represents the limit of the map where wandering particles will be killed if they travel too far 
-%away.
+%% Diffusion Limited Aggregation in 3 Dimensions with a Radial Creation Radius
+% Authors: 
+% Philip Thomas, github.com/philipithomas
+% Mohammad Hashim, github.com/mohashim
+%
+% Three-dimensional diffusion limited aggregation simulation with stick 
+% probability. Particles are intialized on a spherical boundary with a 
+% corresponding spherical kill zone. This file iterated on the 
+% DLAstickcoef.matlab file and produced mass densities consistent with 
+% literature values for 3-dimensional DLA. In addition, the stick probability 
+% may be modified.
+%
+% * Dimensions: 3
+% * Boundaries: Radial
+% * Creation Zone: Radial
+% * Stick Probability: Variable
+% * Data Output: 
+
+
+
 %%  initialize
 clear
 clf
