@@ -50,7 +50,7 @@ Two-dimensional diffusion limited aggregation simulation. Particles are initiali
 * Stick Probability: Always 1
 
 ## DLAradial.matlab
-Two-dimensional diffusion limited aggregation simulation. Particles are intialized on a circular boundary with a corresponding circular kill zone. This file improved on the DLA.matlab file and produced mass densities consistent with literature values for 2-dimensional DLA
+Two-dimensional diffusion limited aggregation simulation. Particles are intialized on a circular boundary with a corresponding circular kill zone. This file iterated on the DLA.matlab file and produced mass densities consistent with literature values for 2-dimensional DLA. 
 
 * Dimensions: 2
 * Boundaries: Radial
@@ -60,6 +60,16 @@ Two-dimensional diffusion limited aggregation simulation. Particles are intializ
 
 
 ## DLAstickcoef.matlab	
+Two-dimensional diffusion limited aggregation simulation with stick probability. Particles are intialized on a circular boundary with a corresponding circular kill zone. This file iterated on the DLAradial.matlab file and produced mass densities consistent with literature values for 2-dimensional DLA. In addition, the stick probability may be modified.
+
+* Dimensions: 2
+* Boundaries: Radial
+* Creation Zone: Radial
+* Stick Probability: Variable
+* Data Output: massDimensionStickCoeffData.csv, massDimensionStickCoeff.png
+* Image Output: DLAcoef.jpg, DLAcoef1percent.jpg,DLAcoef10percent.jpg
+
+
 ## RandomWalk1D.matlab	
 ## RandomWalk2D.matlab	
 ## RandomWalk2D2.matlab

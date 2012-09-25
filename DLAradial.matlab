@@ -1,10 +1,10 @@
-%% Diffusion Limited Aggregation in 2 Dimensions with a Rectangular Creation Radius
+%% Diffusion Limited Aggregation in 2 Dimensions with a Radial Creation Radius
 % Authors: 
 % Philip Thomas, github.com/philipithomas
 % Mohammad Hashim, github.com/mohashim
 %
 % Two-dimensional diffusion limited aggregation simulation. Particles are intialized 
-% on a circular boundary with a corresponding circular kill zone. This file improved 
+% on a circular boundary with a corresponding circular kill zone. This file iterated 
 % on the DLA.matlab file and produced mass densities consistent with literature 
 % values for 2-dimensional DLA. 
 %
