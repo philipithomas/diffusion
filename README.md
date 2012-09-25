@@ -105,3 +105,5 @@ Three-dimensional diffusion limited aggregation simulation with stick probabilit
 
 ## hist2d.matlab
 
+2-Dimensional Histogram function created by Sisi Ma (sisima[at]rci.rutgers.edu ). We used this to visualize the data in randomwalk2d.matlab.
+
