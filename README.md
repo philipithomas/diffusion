@@ -17,6 +17,7 @@ Department of Physics, Washington University in St. Louis
 ## Diffusion Laboratory Description
 
 > Diffusion plays an important role in many processes in biology.  The physical mechanism underlying diffusion is random displacement due to collisions occurring on a molecular scale, also known as Brownian motion or random walk.  In this lab you will explore the mathematics of random walks using simple models and Matlab-based computer simulations.
+
 **Source:** http://physics.wustl.edu/classinfo/360/Pdf/expDescription.pdf
 
 
@@ -29,6 +30,7 @@ The experiment began with quantitation of a standard random walk. One and two-di
 ## Background
 > Diffusion-limited aggregation (DLA) is the process whereby particles undergoing a random walk due to Brownian motion cluster together to form aggregates of such particles. This theory, proposed by Witten and Sander in 1981,[1] is applicable to aggregation in any system where diffusion is the primary means of transport in the system. DLA can be observed in many systems such as electrodeposition, Hele-Shaw flow, mineral deposits, and dielectric breakdown.
 > The clusters formed in DLA processes are referred to as Brownian trees. These clusters are an example of a fractal. In 2-D these fractals exhibit a dimension of approximately 1.71 for free particles that are unrestricted by a lattice, however computer simulation of DLA on a lattice will change the fractal dimension slightly for a DLA in the same embedding dimension. Some variations are also observed depending on the geometry of the growth, whether it be from a single point radially outward or from a plane or line for example. Two examples of aggregates generated using a microcomputer by allowing random walkers to adhere to an aggregate (originally (i) a straight line consisting 1300 particles and (ii) one particle at center) are shown on the right.
+
 **Source:** http://en.wikipedia.org/wiki/Diffusion-limited_aggregation
 
 ## Stick Probability
@@ -63,7 +65,7 @@ Choices include:
  * Having the particle re-enter the simulation from the other side
  
 For our DLA simulations, we chose to have kill boundaries on all of our planes, so that a particle that moves out of dimensions is immediately terminated and another particle is created on the creation radius.
-
+s
 # Files
 
 ## DLA.matlab	
