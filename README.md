@@ -3,9 +3,9 @@ These files were created in Matlab for the Biophysics Laboratory course at Washi
 
 ## Authors
 
-Philip Thomas, http://philipithomas.com
+Philip Thomas, github.com/philipthomas
 
-Mohammed Hashim
+Mohammad Hashim, github.com/mohashim
 
 ## Course Information
 Source: http://physics.wustl.edu/classinfo/360/Docs/intro.php
@@ -48,14 +48,17 @@ Two-dimensional diffusion limited aggregation simulation. Particles are initiali
 * Boundaries: X and Y may be different lengths
 * Creation Zone: Rectangular
 * Stick Probability: Always 1
-* Image Output: 
-* Data output: 
 
-## DLAcoef.jpg	
-## DLAcoef10percent.jpg
-## DLAcoef1percent.jpg	
-## DLAr200.jpg	
 ## DLAradial.matlab
+Two-dimensional diffusion limited aggregation simulation. Particles are intialized on a circular boundary with a corresponding circular kill zone. This file improved on the DLA.matlab file and produced mass densities consistent with literature values for 2-dimensional DLA
+
+* Dimensions: 2
+* Boundaries: Radial
+* Creation Zone: Radial
+* Stick Probability: Always 1
+* Image Output: DLAr200.jpg
+
+
 ## DLAstickcoef.matlab	
 ## RandomWalk1D.matlab	
 ## RandomWalk2D.matlab	

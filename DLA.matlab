@@ -2,8 +2,8 @@
 
 %% Diffusion Limited Aggregation in 2 Dimensions with a Rectangular Creation Radius
 % Authors: 
-% Philip Thomas, http://philipithomas.com
-% Mohammed Hashim
+% Philip Thomas, github.com/philipithomas
+% Mohammad Hashim, github.com/mohashim
 %
 % Two-dimensional diffusion limited aggregation simulation. Particles are initialized on an 
 % outer rectangular boundary with a corresponding rectangular kill zone. This simulation was 

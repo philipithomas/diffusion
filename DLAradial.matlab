@@ -1,6 +1,19 @@
-%Diffusion Limited Aggregation Ver. 2
-%This time we will fix the problem of bias by using a circular map instead of a square. New %particles will be introduced at a certain radius away from the seed particle at the origin and will %random walk until it gets stuck adjacent an already stuck particle. There will be a larger circle %that represents the limit of the map where wandering particles will be killed if they travel too far 
-%away.
+%% Diffusion Limited Aggregation in 2 Dimensions with a Rectangular Creation Radius
+% Authors: 
+% Philip Thomas, github.com/philipithomas
+% Mohammad Hashim, github.com/mohashim
+%
+% Two-dimensional diffusion limited aggregation simulation. Particles are intialized 
+% on a circular boundary with a corresponding circular kill zone. This file improved 
+% on the DLA.matlab file and produced mass densities consistent with literature 
+% values for 2-dimensional DLA. 
+%
+% * Dimensions: 2
+% * Boundaries: Radial
+% * Creation Zone: Radial
+% * Stick Probability: Always 1
+% * Image Output: DLAr200.jpg
+
 %%  initialize
 clear
 clf
