@@ -1,6 +1,20 @@
-%Diffusion Limited Aggregation Ver. 3
-%This time we will fix the problem of bias by using a circular map instead of a square. New %particles will be introduced at a certain radius away from the seed particle at the origin and will %random walk until it gets stuck adjacent an already stuck particle. There will be a larger circle %that represents the limit of the map where wandering particles will be killed if they travel too far 
-%away.
+%% Diffusion Limited Aggregation in 2 Dimensions with a Radial Creation Radius and Variable Stick Probability
+% Authors: 
+% Philip Thomas, github.com/philipithomas
+% Mohammad Hashim, github.com/mohashim
+%
+% Two-dimensional diffusion limited aggregation simulation with stick probability. Particles
+% are intialized on a circular boundary with a corresponding circular kill zone. This file 
+% improved on the DLAradial.matlab file and produced mass densities consistent with literature 
+% values for 2-dimensional DLA. In addition, the stick probability may be modified.
+% 
+% * Dimensions: 2
+% * Boundaries: Radial
+% * Creation Zone: Radial
+% * Stick Probability: Variable
+% * Data Output: massDimensionStickCoeffData.csv, massDimensionStickCoeff.png
+% * Image Output: DLAcoef.jpg, DLAcoef1percent.jpg,DLAcoef10percent.jpg
+
 %%  initialize
 clear
 clf

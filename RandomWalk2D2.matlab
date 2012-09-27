@@ -1,10 +1,26 @@
-%2D Random Walk Ver. 2
-%Based on code from http://matlabnewbie.blogspot.com/2010/02/2d-random-walk-program.html
+%% Random Walk in 2 Dimensions with Histogram Output
+% Authors: 
+% Philip Thomas, github.com/philipithomas
+% Mohammad Hashim, github.com/mohashim
+%
+% Simulates a 2-dimensional random walk with a variable number of steps. 
+% Data is displayed as the path of the walk, rather than as the displacement 
+% in the other random walk files. There is a fixed equal probability of a 
+% step in each direction. This file is best for visualizing a low number 
+% (roughly 3) of trials, whereas the histograms are best for understanding 
+% the distribution from a large number of trials. 
+%
+% * Dimensions: 2
+% * Step Probability: Fixed
+% * Visualization: Path
+
+% Based on code from 
+% http://matlabnewbie.blogspot.com/2010/02/2d-random-walk-program.html
 
 % This code is built for one trial to better visualize a path. The original random walk 2d program is written for a data-based analysis of multiple steps and trials; this is built for better visualization of a 2d random walk
 
 % Based on setup from http://en.wikipedia.org/wiki/Random_walk#Variants_of_random_walks
-%Emulates coming to a 4-way intersection in a city and having to pick a direction, with all directions being of equal probability
+% Emulates coming to a 4-way intersection in a city and having to pick a direction, with all directions being of equal probability
 
 
 %% initialize

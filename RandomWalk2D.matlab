@@ -1,5 +1,16 @@
-%This is a test of a 2D random walk
-
+%% Random Walk in 2 Dimensions with Histogram Output
+% Authors: 
+% Philip Thomas, github.com/philipithomas
+% Mohammad Hashim, github.com/mohashim
+%
+% Simulates a 2-dimensional random walk with a variable number of steps.
+% Data is displayed as a 2-D histogram. There is a fixed equal probability 
+% of a step in each direction. 
+%
+% * Dimensions: 2
+% * Step Probability: Fixed
+% * Visualization: Histogram
+% * Data Output: randomwalk2d.asv
 
 % It is based on a Wikipedia description of a 2D random walk, which
 % describes a 'drunk' in a city who approaches 4-way intersections, and
@@ -67,6 +78,7 @@ x= mean(Results(1,:,1));
 y= mean(Results(1,:,2));
 r= sqrt(x^2 + y^2)
 s= std(r)
+
 %% Plot results
 % Display the results as a histogram:
 %hist2d(Results(:,:,1)',Results(:,:,2)')

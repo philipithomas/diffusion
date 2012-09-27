@@ -1,8 +1,20 @@
 
 
-%% Diffusion Limited Aggregation
-
-
+%% Diffusion Limited Aggregation in 2 Dimensions with a Rectangular Creation Radius
+% Authors: 
+% Philip Thomas, github.com/philipithomas
+% Mohammad Hashim, github.com/mohashim
+%
+% Two-dimensional diffusion limited aggregation simulation. Particles are initialized on an 
+% outer rectangular boundary with a corresponding rectangular kill zone. This simulation was 
+% a starting point for our DLA simulations, but was found to produce a mass density inconsistent 
+% with literature values for 2-dimensional DLA. Due to the rectanular creation radius, the 
+% simulation showed a bias away from the creation rectangular's corners. 
+% 
+% * Dimensions: 2
+% * Boundaries: X and Y may be different lengths
+% * Creation Zone: Rectangular
+% * Stick Probability: Always 1
 
 %%  initialize
 clear

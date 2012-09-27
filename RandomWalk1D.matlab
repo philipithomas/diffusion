@@ -1,5 +1,15 @@
-%This is a test of a 1D random walk
+%% Random Walk in 1 Dimension
+% Authors: 
+% Philip Thomas, github.com/philipithomas
+% Mohammad Hashim, github.com/mohashim
+%
+% Simulates a 1-dimensional random walk with a variable number of steps. Data 
+% is displayed as a histogram. Probability of a forward (p) vs. backward 
+% (q) step may be varied. 
 
+* Dimensions: 2
+* Step Probability: Variable
+* Visualization: Histogram
 %% initialize
 clear
 clf
