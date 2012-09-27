@@ -1,6 +1,23 @@
-%Diffusion Limited Aggregation 3D
-%This time we will fix the problem of bias by using a circular map instead of a square. New %particles will be introduced at a certain radius away from the seed particle at the origin and will %random walk until it gets stuck adjacent an already stuck particle. There will be a larger circle %that represents the limit of the map where wandering particles will be killed if they travel too far 
-%away.
+%% Diffusion Limited Aggregation in 3 Dimensions with a Radial Creation Radius
+% Authors: 
+% Philip Thomas, github.com/philipithomas
+% Mohammad Hashim, github.com/mohashim
+%
+% Three-dimensional diffusion limited aggregation simulation with stick 
+% probability. Particles are intialized on a spherical boundary with a 
+% corresponding spherical kill zone. This file iterated on the 
+% DLAstickcoef.matlab file and produced mass densities consistent with 
+% literature values for 3-dimensional DLA. In addition, the stick probability 
+% may be modified.
+%
+% * Dimensions: 3
+% * Boundaries: Radial
+% * Creation Zone: Radial
+% * Stick Probability: Variable
+% * Data Output: 
+
+
+
 %%  initialize
 clear
 clf
@@ -9,14 +26,14 @@ clc
 %% Set bounds
 
 % creation distance from origin
-radiusCreation= 20;
+radiusCreation= 50;
 
 % fraction greater than creation radius for kill zone
 frac=.5;
 
 
 % Also set the number of particles we want to enter. 
-numparticles = 1000;
+numparticles = 10000;
 
 % Set probability of sticking
 stickProbability = 1;
@@ -69,7 +86,7 @@ while (( particle >= numparticles) + (escape))==0
 
 
 % First initialize two angle
-theta=rand*pi
+theta=rand*pi;
 phi=rand*2*pi; %radians
 
 % We initialize coordinates with radius =radiusCreation based on phi
@@ -103,7 +120,7 @@ die = 0;
 while ((stuck+die+escape) == 0)
 
 % Random walk -> Move it
-walk= 1.5 rand;
+walk= 1.5 * rand;
 %disp('.');
 if walk<.25 
 	%up
@@ -147,7 +164,7 @@ end
 % Check bounds (is it less than 1 or larger than x/y max?)
 % if out of bounds - DIE
 
-if (2>=radiusKill) 
+if (sqrt(x^2+y^2+z^2)>=radiusKill) 
 	% The particle is out of bounds. 
 	% KILL IT!!!!
 die=1;
@@ -191,7 +208,7 @@ if stuck
 % If the particle sticks within 2 units of the edge of the board, we end the simulation
 % so that particles don't start overlapping and stuff. 
 % note that, at this point, the variables x and y represent a stuck particle already
-if ((2*1.2)>=radiusCreation)
+if ((sqrt(x^2+y^2+z^2)*1.2)>=radiusCreation)
 	escape = 1;
 	% Set the escape parameter equal to true to stop the loop
 end % end escape check
@@ -222,9 +239,9 @@ for i=1:(radiusKill*2+3)
         for k=1:(radiusKill*2+3)
       	 	 if map(i,j,k)==1
             	% if particle is there
-            	if (2>r)
+            	if (sqrt((i-add)^2+(j-add)^2+(k-add)^2)>r)
                     % update the radius to it
-                    r=2;
+                    r=sqrt((i-add)^2+(j-add)^2+(k-add)^2);
                 end
             end
         end
