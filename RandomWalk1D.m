@@ -5,13 +5,14 @@ clear
 clf
 clc
 
+disp('<tr><th>p</th><th>q</th><th>Trials</th><th>Steps</th><th>Average of trials</th><th>Standard Dev</th></tr>');
 
 %% Change these variables
 for p = 0:.1:1
 %Probability of a forward step
 %p = .5;
 %Number of steps
-steps = 1000;
+steps = 100000;
 
 %Number of trials
 trials=1000;
@@ -52,17 +53,17 @@ xlabel('Displacement from origin')
 ylabel('Number of trials')
 
 %% Display results
-disp('<TRIAL>')
-disp('Probability:')
-disp(strcat('p = ', num2str(p), ' q = ', num2str(q) ))
-disp('Trials:')
+disp('<tr><td>')
+disp('')
+disp(strcat('', num2str(p), '</td><td>', num2str(q) ))
+disp('</td><td>')
 disp(num2str(trials))
-disp('Steps:')
+disp('</td><td>')
 disp(num2str(steps))
-disp('Average of trials:')
+disp('</td><td>')
 disp(num2str(mean(Results)))
-disp('Standard Deviation of trials:')
+disp('</td><td>')
 disp(num2str(std(Results)))
-disp('</TRIAL>')
+disp('</td></tr>')
 disp('')
 end

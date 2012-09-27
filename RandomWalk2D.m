@@ -11,15 +11,15 @@ clear
 clf
 clc
 
-
+disp('<th><th>Trials</th><th>Steps</th><th>Average of trials</th><th>Standard Dev</th></tr>');
 %% Change these variables
 % Probability: Equal for all 4 directions
 
 %Number of steps
-steps = 5;
+steps =1000;
 
 %Number of trials
-trials=6;
+trials=1000;
 
 %% Dont' change below here for general trials
 
@@ -63,13 +63,27 @@ end
 % a single random walk of the number of steps specified:
 Results= sum(M,1);
 
+x= mean(Results(1,:,1));
+y= mean(Results(1,:,2));
+r= sqrt(x^2 + y^2)
+s= std(r)
 %% Plot results
 % Display the results as a histogram:
-hist2d(Results(:,:,1)',Results(:,:,2)')
-title(strcat('Random walk in 2 d with ',num2str(trials),' trials and ',num2str(steps),' steps') );
-xlabel('X displacement')
-ylabel('Y displacement')
-zlabel('Trials')
+%hist2d(Results(:,:,1)',Results(:,:,2)')
+%title(strcat('Random walk in 2 d with ',num2str(trials),' trials and ',num2str(steps),' steps') );
+%xlabel('X displacement')
+%ylabel('Y displacement')
+%zlabel('Trials')
 
 %% Display results
 
+disp('</td><td>')
+disp(num2str(trials))
+disp('</td><td>')
+disp(num2str(steps))
+disp('</td><td>')
+disp(num2str(mean(Results)))
+disp('</td><td>')
+disp(num2str(std(Results)))
+disp('</td></tr>')
+disp('')

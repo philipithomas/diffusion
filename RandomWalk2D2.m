@@ -18,10 +18,10 @@ hold on; % Allows multiple plots
 % Probability: Equal for all 4 directions
 
 %Number of steps
-steps = 100000;
+steps = 10000;
 
 %Number of trials
-trials=6; 
+trials=1; 
 
 %% Code - don’t edit below here for trials
 
@@ -69,7 +69,7 @@ end %end all steps
 %Hold is already on
 % Set random color in RGB format with 3 random numbers
 plot(x(t,:),y(t,:),'Color', [rand rand rand]) 
-
+plot(x(t,10000),y(t,10000), 'ko')
 
 end %end trials
 title('Random Walk in 2 Dimensions');
